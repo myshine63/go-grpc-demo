@@ -1,0 +1,26 @@
+syntax = "proto3"; // protobuf的版本
+// 第一个参数表示生成的文件，放在哪里，第二个参数表面，生成的文件属于那个包
+option go_package = "../service;service";
+package pb;
+
+message addressInfo {
+  string address = 1;
+  string email = 2;
+}
+
+enum gender {
+  male = 0;
+  female = 1;
+}
+
+message user{
+  string name=1;
+  int32 age=2;
+  gender gender=3;
+  addressInfo addressInfo=4;
+  double score=5;
+}
+
+service userServer{
+  rpc initUser(user) returns (user);
+}
