@@ -36,3 +36,7 @@ protoc --go-grpc_out=. ./*proto
 ```shell
 consul agent -server -bind=0.0.0.0 -config-dir=d:/consul/consul.d -data-dir=d:/consul/data -node=consul-demo -ui
 ```
+7. 下载安装consul依赖包
+```shell
+go get -u -v github.com/hashicorp/consul
+```
